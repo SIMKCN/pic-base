@@ -1,5 +1,5 @@
 <script>
-import filepick from "@/components/AppFilePick.vue"
+import newsorting from "@/components/AppNewSorting.vue"
 export default {
   name: "app",
   data() {
@@ -8,14 +8,14 @@ export default {
     }
   },
   components: {
-    filepick
+    newsorting
   }
 }
 
 </script>
 <template>
   <div>
-    <filepick></filepick>
+    <newsorting></newsorting>
     
   </div>
 
