@@ -1,17 +1,22 @@
 <template>
-    <div class="bg-[#3A435E] mt-5 w-96 h-72 rounded-xl">
-        <h1 class="text-center pt-2 text-lg text-[#CEEDDB] mb-10">Start sorting by uploading your pictures!</h1>
+    <div class="">
+      <div class="bg-[#2E3A59] h-72 rounded-xl shadow-lg px-2 py-2">
+        <h1 class="text-lg text-[#CEEDDB] text-center pb-5">
+          Start sorting by uploading your pictures!
+        </h1>
         <filepick></filepick>
+      </div>
     </div>
-
-</template>
-<script>
-import filepick from "@/components/AppFilePick.vue"
-export default {
+  </template>
+  
+  <script>
+  import filepick from "@/components/AppFilePick.vue";
+  
+  export default {
     name: "newsorting",
     components: {
-        filepick
-    }
-}
-
-</script>
+      filepick,
+    },
+  };
+  </script>
+  
