@@ -18,8 +18,8 @@ export default {
 </script>
 <template>
   <div class="flex items-center justify-center h-screen">
-    <newsorting v-if="new_sorting_session"></newsorting>
-    <basebutton v-if="new_sorting_session == false" @clicked="new_sorting_session = !new_sorting_session"></basebutton>
+    <newsorting v-if="new_sorting_session" @done="new_sorting_session = false"></newsorting>
+    <basebutton label="Start sorting" v-if="new_sorting_session == false" @clicked="new_sorting_session = !new_sorting_session"></basebutton>
   </div>
 
 

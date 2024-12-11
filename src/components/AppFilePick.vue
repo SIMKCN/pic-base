@@ -28,11 +28,12 @@
             multiple 
             class="hidden"
         />
+        
         </div>
-
   </template>
   
   <script>
+ 
   export default {
     name: "filepick",
     data() {
