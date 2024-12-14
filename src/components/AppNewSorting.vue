@@ -4,9 +4,9 @@
           Start sorting by uploading your pictures!
         </h1>
         <filepick></filepick>
-        <div class="grid grid-rows-1 grid-cols-2 justify-evenly">
+        <div class="grid grid-rows-1 grid-cols-2">
             <basebutton label="Done" @clicked="closeUploadWindow"></basebutton>
-            <basebutton label="Cancel" @clicked="closeUploadWindow"></basebutton>
+            <basebutton class="flex justify-self-end" label="Cancel" @clicked="closeUploadWindow"></basebutton>
         </div>
         
 
