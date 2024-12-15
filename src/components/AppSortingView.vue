@@ -4,6 +4,7 @@
             <h1 class="text-lg text-[#CEEDDB] text-center pb-5">
                 Start sorting your pictures
             </h1>
+            <p class="text-[#CEEDDB]">{{ images[currentpic].file.name }}</p>
             <div class="flex justify-center items-center">
                 <img 
                     :src="images[currentpic].preview" 
@@ -16,24 +17,35 @@
                     <basebutton @clicked="lastPicture" label="<-"></basebutton>
                     <basebutton @clicked="nextPicture" label="->"></basebutton>
                 </div>
+                <div class="grid grid-rows-1 grid-cols-2">
+                    <input type="range" min="0" max="10" steps="1" v-model="rating">
+
+                    <baselabel :label=rating class="ml-2 mt-4 text-lg"></baselabel>
+
+                </div>
 
                 <basebutton @clicked="doneSorting" label="Done"></basebutton>
+                    
+                
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import baselabel from "@/components/BaseLabel.vue"
 import { useUploadStore } from "@/stores/uploads";
 import basebutton from "@/components/BaseButton.vue"
 export default {
     name: "sorting",
     components: {
-        basebutton
+        basebutton,
+        baselabel
     },
     data() {
         return {
-            currentpic: 0
+            currentpic: 0,
+            rating: 0
         }
     },
     computed: {
@@ -62,7 +74,7 @@ export default {
             if(this.checkLength() == true) {
                 this.currentpic -= 1
             } else {
-                
+
             }
             
 
