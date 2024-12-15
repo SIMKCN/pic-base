@@ -8,14 +8,14 @@
     @click="triggerFileInput"
   >
     <p v-if="!files.length" class="text-[#CEEDDB] mt-14">Drag & drop files here, or click to upload</p>
-    <ul v-if="files.length" class="mt-4 text-left">
+    <ul v-if="files.length" class="mt-4 text-left max-h-[120px] overflow-hidden">
       <li 
         v-for="(file, index) in files" 
         :key="index" 
-        class="text-sm text-gray-700 mt-2 flex justify-between items-center"
+        class="text-sm text-[#B4CDED] mt-2 flex justify-between items-center "
       >
         {{ file.name }} 
-        <span class="text-gray-500 text-xs">
+        <span class="text-[#B4CDED] text-xs">
           ({{ (file.size / 1024).toFixed(2) }} KB)
         </span>
       </li>
