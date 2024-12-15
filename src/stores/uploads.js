@@ -13,4 +13,9 @@ export const useUploadStore = defineStore("uploads", {
       this.images = [];
     },
   },
+  getters: {
+    getArrayLength() {
+      return this.images.length 
+    }
+  }
 });
