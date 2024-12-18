@@ -14,12 +14,14 @@
           <img 
             :src="image.preview" 
             :alt="image.file.name" 
-            class="w-full h-full object-cover transition-transform transform hover:scale-125"
+            class="w-full h-full object-cover transition-transform transform hover:scale-150"
+            
           />
         </div>
 
-        <div>
-          <p class="text-white text-xs mt-2 truncate">{{ image.file.name }}</p>
+        <div class="flex flex-justify-between gap-2">
+          <p class="text-white text-sm mt-2 truncate">{{ image.file.name }}</p>
+          <input type="checkbox" class="size-5 flex justify-self-start mt-2">
         </div>
       </div>
     </div>
