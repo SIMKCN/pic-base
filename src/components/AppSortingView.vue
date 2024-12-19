@@ -5,6 +5,7 @@
                 Start sorting your pictures
             </h1>
             <p class="text-[#CEEDDB]">{{ images[currentpic].file.name }}</p>
+            <p class="text-[#CEEDDB]">Picture: {{ currentpic }}</p>
             <div class="flex justify-center items-center">
                 <img 
                     :src="images[currentpic].preview" 
@@ -44,7 +45,7 @@ export default {
     },
     data() {
         return {
-            currentpic: 0,
+            currentpic: 1,
             rating: 0
         }
     },
@@ -56,25 +57,22 @@ export default {
     },
     methods: {
         checkLength() {
-            const uploadStore = useUploadStore()
-            if (this.currentpic == uploadStore.getArrayLength) {
-                return false
-            } else {
-                return true
-            }
+
         },
         nextPicture() {
-            if (this.checkLength() == true) {
-                this.currentpic += 1
-            } else {
+            const uploadStore = useUploadStore()
+            if (this.currentpic == uploadStore.getArrayLength) {
                 this.currentpic = 0
+            } else {
+                this.currentpic += 1
             }
         },
         lastPicture() {
-            if(this.checkLength() == true) {
-                this.currentpic -= 1
+            const uploadStore = useUploadStore()
+            if(this.currentpic == 0) {
+                this.currentpic = uploadStore.getArrayLength - 1
             } else {
-
+                this.currentpic -= 1
             }
             
 

@@ -15,7 +15,7 @@
             :src="image.preview" 
             :alt="image.file.name" 
             class="w-full h-full object-cover transition-transform transform hover:scale-150"
-            
+            @click=""
           />
         </div>
 
@@ -26,17 +26,27 @@
       </div>
     </div>
   </div>
+
   </template>
 
 <script>
 import { useUploadStore } from "@/stores/uploads";
+
 export default {
     name: "viewer",
+
+    data() {
+      return {
+        showModal: true
+      }
+      
+    },
     computed: {
         images() {
         const uploadStore = useUploadStore()
         return uploadStore.images
         }
-  },
+    },
+
 }
 </script>
