@@ -4,9 +4,12 @@
             <h1 class="text-lg text-[#CEEDDB] text-center pb-5">
                 Start sorting your pictures
             </h1>
-            <p class="text-[#CEEDDB]">{{ images[currentpic].file.name }}</p>
-            <p class="text-[#CEEDDB]">Picture: {{ currentpic }}</p>
-            <div class="flex justify-center items-center">
+            <div class="flex justify-between mx-4">
+                <p class="text-[#CEEDDB]">{{ images[currentpic].file.name }}</p>
+                <p class="text-[#CEEDDB]">Picture: {{ currentpic }}</p>
+            </div>
+
+            <div class="flex justify-center items-center mt-5 mb-5">
                 <img 
                     :src="images[currentpic].preview" 
                     :alt="images[currentpic].file.name" 
