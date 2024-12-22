@@ -40,7 +40,7 @@ export default {
   name: "filepick",
   data() {
     return {
-      files: [], // lokale Dateien (optional)
+      files: [], 
       isDragging: false,
     };
   },

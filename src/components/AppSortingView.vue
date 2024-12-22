@@ -22,7 +22,7 @@
                     <basebutton @clicked="nextPicture" label="->"></basebutton>
                 </div>
                 <div class="grid grid-rows-1 grid-cols-2">
-                    <input type="range" min="0" max="10" steps="1" v-model="rating">
+                    <input type="range" min="0" max="10" steps="1" v-model="rating" @change="saveRating">
 
                     <baselabel :label=rating class="ml-2 mt-4 text-lg"></baselabel>
 
@@ -40,6 +40,7 @@
 import baselabel from "@/components/BaseLabel.vue"
 import { useUploadStore } from "@/stores/uploads";
 import basebutton from "@/components/BaseButton.vue"
+import { useRatingStore } from "@/stores/rating";
 export default {
     name: "sorting",
     components: {
@@ -59,8 +60,11 @@ export default {
         }
     },
     methods: {
-        checkLength() {
-
+        saveRating() {
+            const uploadStore = useUploadStore()
+            const RatingStore = useRatingStore()
+            RatingStore.pushRating(this.rating, uploadStore.images[this.currentpic].file.name)
+            console.log(RatingStore.ratings)
         },
         nextPicture() {
             const uploadStore = useUploadStore()

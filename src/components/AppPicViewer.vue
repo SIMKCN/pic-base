@@ -15,7 +15,7 @@
             :src="image.preview" 
             :alt="image.file.name" 
             class="w-full h-full object-cover transition-transform transform hover:scale-150"
-            @click=""
+
           />
         </div>
 

@@ -2,6 +2,13 @@ import { defineStore } from "pinia";
 
 export const useRatingStore = defineStore("ratings", {
   state: () => ({
-    ratings: {},
+    ratings: [],
   }),
+  actions: {
+
+    pushRating(rating, filename) {
+      this.ratings.push(rating, filename)
+
+    }
+  }
 });
