@@ -1,5 +1,4 @@
 # pic-base
-
-Helps to sort many pictures
+Makes the process of sorting pictures easier
 
 (Under construction)
